@@ -1,0 +1,40 @@
+#img-info {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.exp-edu {
+  margin: 0 auto;
+  width: 90%;
+  margin-top: 4%;
+  text-align: initial !important;
+}
+
+.work-list {
+  margin: 0 auto;
+  margin-top: 4%;
+  text-align: initial !important;
+}
+
+.exp-edu-title,
+.work-list-title {
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.work-list-block {
+  margin-top: 2%;
+}
+
+.exp-list-lv2 {
+  padding-left: 8%;
+}
+
+.exp-list-lv3 {
+  padding-left: 16%;
+}
+
+body {
+  background-image: url("../../images/bg.jpg") !important;
+  background-position-y: 35%;
+}
