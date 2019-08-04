@@ -34,7 +34,17 @@
   padding-left: 16%;
 }
 
-body {
-  background-image: url("../../images/bg.jpg") !important;
-  background-position-y: 35%;
+@media only screen and (min-width: 600px) {
+  body {
+    background-image: url("../../images/bg.jpg") !important;
+    background-position-y: 35%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-image: url("../../images/bg2.jpg") !important;
+    background-position-y: 35%;
+    background-repeat: no-repeat;
+  }
 }
