@@ -447,6 +447,32 @@
         <!-- Contact -->
         <article id="contact">
           <h2 class="major">聯絡</h2>
+          <div>
+            <form id="mail-form" method="post" action="#">
+              <div class="fields">
+                <div class="field half">
+                  <label for="mail-subject">標題</label>
+                  <input type="text" name="demo-name" id="mail-subject" value="" placeholder="" />
+                </div>
+                <div class="field">
+                  <label for="mail-message">內容</label>
+                  <textarea name="demo-message" id="mail-message" placeholder="Enter your message" rows="6"></textarea>
+                </div>
+              </div>
+              <ul class="actions">
+                <li><input type="submit" value="Send Message" class="primary" /></li>
+                <!-- <li><input type="reset" value="Reset" /></li> -->
+              </ul>
+              <script>
+                $("#mail-form").submit(function(e) {
+                  e.preventDefault();
+
+                  var subject = $("#mail-subject").val();
+                  window.location.assign(`mailto:liwenhan.213@gmail.com?subject=${subject}&body=${document.getElementById("mail-message").value}`);
+                });
+              </script>
+            </form>
+          </div>
           <ul>
             <li><span style="font-weight: bold">LINE</span>：liwenhan.213</li>
             <li><span style="font-weight: bold">WeChat</span>：liwenhan_213</li>
