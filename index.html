@@ -463,31 +463,32 @@
                 <li><input type="submit" value="Send Message" class="primary" /></li>
                 <!-- <li><input type="reset" value="Reset" /></li> -->
               </ul>
-              <script>
-                $("#mail-form").submit(function(e) {
-                  e.preventDefault();
-
-                  var subject = $("#mail-subject").val();
-                  console.log(
-                    document
-                      .getElementById("mail-message")
-                      .value.toString()
-                      .replace("↵", "\r\n")
-                  );
-
-                  var msg = "<span>111</span><br/><span>222</span>";
-                  window.location.assign(`mailto:liwenhan.213@gmail.com?subject=${subject}&body=${msg}`);
-                });
-              </script>
             </form>
           </div>
           <ul>
             <li><span style="font-weight: bold">LINE</span>：liwenhan.213</li>
             <li><span style="font-weight: bold">WeChat</span>：liwenhan_213</li>
             <li><span style="font-weight: bold">Cell Phone</span>：＋886-922-145-947</li>
-            <li><span style="font-weight: bold">E-mail</span>：liwenhan.213＠gmail.com</li>
+            <li><span style="font-weight: bold">E-mail</span>：<span id="email-click" style="color:#0066FF; cursor: pointer; ">liwenhan.213＠gmail.com</span></li>
           </ul>
         </article>
+        <script>
+          $("#mail-form").submit(function(e) {
+            e.preventDefault();
+
+            var subject = $("#mail-subject").val();
+
+            var msg = document.getElementById("mail-message").value.toString();
+            window.location.assign(`mailto:liwenhan.213@gmail.com?subject=${subject}&body=${msg}`);
+          });
+
+          $("#email-click").click(function() {
+            var subject = $("#mail-subject").val();
+
+            var msg = document.getElementById("mail-message").value.toString();
+            window.location.assign(`mailto:liwenhan.213@gmail.com?subject=${subject}&body=${msg}`);
+          });
+        </script>
       </div>
 
       <!-- Footer -->
