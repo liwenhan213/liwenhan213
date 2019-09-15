@@ -128,7 +128,7 @@
           $article.addClass("active");
 
           // Window stuff.
-          // $window.scrollTop(0).triggerHandler("resize.flexbox-fix");
+          $window.scrollTop(0).triggerHandler("resize.flexbox-fix");
 
           // Unlock.
           setTimeout(function() {
@@ -158,7 +158,7 @@
           $article.addClass("active");
 
           // Window stuff.
-          // $window.scrollTop(0).triggerHandler("resize.flexbox-fix");
+          $window.scrollTop(0).triggerHandler("resize.flexbox-fix");
 
           // Unlock.
           setTimeout(function() {
@@ -206,7 +206,7 @@
       $body.removeClass("is-switching");
 
       // Window stuff.
-      // $window.scrollTop(0).triggerHandler("resize.flexbox-fix");
+      $window.scrollTop(0).triggerHandler("resize.flexbox-fix");
 
       return;
     }
@@ -232,7 +232,7 @@
         $body.removeClass("is-article-visible");
 
         // Window stuff.
-        // $window.scrollTop(0).triggerHandler("resize.flexbox-fix");
+        $window.scrollTop(0).triggerHandler("resize.flexbox-fix");
 
         // Unlock.
         setTimeout(function() {
@@ -317,10 +317,10 @@
     $window
       .on("scroll", function() {
         oldScrollPos = scrollPos;
-        // scrollPos = $htmlbody.scrollTop();
+        scrollPos = $htmlbody.scrollTop();
       })
       .on("hashchange", function() {
-        // $window.scrollTop(oldScrollPos);
+        $window.scrollTop(oldScrollPos);
       });
   }
 
