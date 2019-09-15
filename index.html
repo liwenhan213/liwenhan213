@@ -468,7 +468,15 @@
                   e.preventDefault();
 
                   var subject = $("#mail-subject").val();
-                  window.location.assign(`mailto:liwenhan.213@gmail.com?subject=${subject}&body=${document.getElementById("mail-message").value}`);
+                  console.log(
+                    document
+                      .getElementById("mail-message")
+                      .value.toString()
+                      .replace("↵", "\r\n")
+                  );
+
+                  var msg = "<span>111</span><br/><span>222</span>";
+                  window.location.assign(`mailto:liwenhan.213@gmail.com?subject=${subject}&body=${msg}`);
                 });
               </script>
             </form>
