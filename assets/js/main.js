@@ -243,23 +243,23 @@
   };
 
   // Articles.
-  $main_articles.each(function() {
-    var $this = $(this);
+  // $main_articles.each(function() {
+  //   var $this = $(this);
 
-    // Close.
-    $('<div class="close">Close</div>')
-      .appendTo($this)
-      .on("click", function() {
-        location.hash = "";
-      });
+  //   // Close.
+  //   $('<div class="close">Close</div>')
+  //     .appendTo($this)
+  //     .on("click", function() {
+  //       location.hash = "";
+  //     });
 
-    // Prevent clicks from inside article from bubbling.
-    $this.on("click", function(event) {
-      var players = document.getElementsByClassName("play-mp3");
-      allPause(players, -1);
-      event.stopPropagation();
-    });
-  });
+  //   // Prevent clicks from inside article from bubbling.
+  //   $this.on("click", function(event) {
+  //     var players = document.getElementsByClassName("play-mp3");
+  //     allPause(players, -1);
+  //     event.stopPropagation();
+  //   });
+  // });
 
   // Events.
   $body.on("click", function(event) {
