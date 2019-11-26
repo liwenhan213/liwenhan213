@@ -214,10 +214,10 @@ var mv = new Vue({
         var _this = this // 指vue
         var settings = {
           data: {
-            'entry.1128921374': _this.form_name.value,
-            'entry.1173391172': _this.form_email.value,
-            'entry.1045131985': _this.form_tel.value,
-            'entry.2069047829': _this.form_message.value
+            'entry.431158273': _this.form_name.value,
+            'entry.2113224170': _this.form_email.value,
+            'entry.752955083': _this.form_tel.value,
+            'entry.1049039376': _this.form_message.value
           },
           type: 'POST',
           url:
