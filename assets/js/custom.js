@@ -221,7 +221,7 @@ var mv = new Vue({
           },
           type: 'POST',
           url:
-            'https://docs.google.com/forms/u/1/d/e/1FAIpQLSeUB6TIZ62Pb09noPHYZ1n2B2Ixlyzjnm4oRCVzDcwOaTkTyA/formResponse',
+            'https://docs.google.com/forms/d/e/1FAIpQLSeUB6TIZ62Pb09noPHYZ1n2B2Ixlyzjnm4oRCVzDcwOaTkTyA/formResponse',
           contentType: 'application/json',
           dataType: 'jsonp',
           complete: function complete() {
@@ -240,10 +240,10 @@ var mv = new Vue({
         // ajax post
         $.ajax(settings)
           .done(function(res) {
-            // console.log('done 表單已送出')
+            console.log('done 表單已送出')
           })
           .fail(function() {
-            // console.log('fail 表單送出失敗')
+            console.log('fail 表單送出失敗')
           })
       }
     }
