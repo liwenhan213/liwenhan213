@@ -214,14 +214,14 @@ var mv = new Vue({
         var _this = this // 指vue
         var settings = {
           data: {
-            'entry.431158273': _this.form_name.value,
-            'entry.2113224170': _this.form_email.value,
-            'entry.752955083': _this.form_tel.value,
-            'entry.1049039376': _this.form_message.value
+            'entry.147171768': _this.form_name.value,
+            'entry.1425847448': _this.form_email.value,
+            'entry.1672053199': _this.form_tel.value,
+            'entry.1693786573': _this.form_message.value
           },
           type: 'POST',
           url:
-            'https://docs.google.com/forms/d/e/1FAIpQLSeUB6TIZ62Pb09noPHYZ1n2B2Ixlyzjnm4oRCVzDcwOaTkTyA/formResponse',
+            'https://docs.google.com/forms/d/e/1FAIpQLSdo5UIhhQ0r1hIWGp1wuACkG7wsKDTTz2aLykiWJCY7MGtgAg/formResponse',
           contentType: 'application/json',
           dataType: 'jsonp',
           complete: function complete() {
@@ -240,10 +240,10 @@ var mv = new Vue({
         // ajax post
         $.ajax(settings)
           .done(function(res) {
-            console.log('done 表單已送出')
+            // console.log('done 表單已送出')
           })
           .fail(function() {
-            console.log('fail 表單送出失敗')
+            // console.log('fail 表單送出失敗')
           })
       }
     }
