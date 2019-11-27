@@ -215,13 +215,13 @@ var mv = new Vue({
         var settings = {
           data: {
             'entry.147171768': _this.form_name.value,
-            'entry.1425847448': _this.form_email.value,
-            'entry.1672053199': _this.form_tel.value,
+            'entry.1425847448': _this.form_tel.value,
+            'entry.1672053199': _this.form_email.value,
             'entry.1693786573': _this.form_message.value
           },
           type: 'POST',
           url:
-            'https://docs.google.com/forms/u/0/d/e/1FAIpQLSdo5UIhhQ0r1hIWGp1wuACkG7wsKDTTz2aLykiWJCY7MGtgAg/formResponse',
+            'https://docs.google.com/forms/d/e/1FAIpQLSdo5UIhhQ0r1hIWGp1wuACkG7wsKDTTz2aLykiWJCY7MGtgAg/formResponse',
           contentType: 'application/json',
           dataType: 'jsonp',
           complete: function complete() {
