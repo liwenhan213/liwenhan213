@@ -240,10 +240,10 @@ var mv = new Vue({
         // ajax post
         $.ajax(settings)
           .done(function(res) {
-            // console.log('done 表單已送出')
+            console.log('done 表單已送出')
           })
           .fail(function() {
-            // console.log('fail 表單送出失敗')
+            console.log('fail 表單送出失敗')
           })
       }
     }
