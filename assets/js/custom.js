@@ -221,7 +221,7 @@ var mv = new Vue({
           },
           type: 'POST',
           url:
-            'https://docs.google.com/forms/d/e/1FAIpQLSdo5UIhhQ0r1hIWGp1wuACkG7wsKDTTz2aLykiWJCY7MGtgAg/formResponse',
+            'https://docs.google.com/forms/u/0/d/e/1FAIpQLSdo5UIhhQ0r1hIWGp1wuACkG7wsKDTTz2aLykiWJCY7MGtgAg/formResponse',
           contentType: 'application/json',
           dataType: 'jsonp',
           complete: function complete() {
