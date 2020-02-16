@@ -509,8 +509,8 @@ var messages = {
 }
 
 var i18n = new VueI18n({
-  locale: '',
-  fallbackLocale: 'tw',
+  locale: 'tw',
+  // fallbackLocale: 'tw',
   messages: messages
 })
 
@@ -691,4 +691,4 @@ var mv = new Vue({
       }
     })
   }
-})
+}).$mount('#app')
