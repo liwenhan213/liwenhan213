@@ -71,226 +71,320 @@ html
     #app
       // Wrapper
       #wrapper
+        
+        // 繁簡切換        
+        .language
+          a(href='#', @click.prevent="languageChange = !languageChange") {{ language }}
+            span.fas.fa-caret-down
+          .change(:class="{ 'active': languageChange == true}", @click.prevent="languageChange = !languageChange")
+            a(href='#', @click.prevent="changeTW") 繁體中文
+            a(href='#', @click.prevent="changeCN") 简体中文
+
         // Header
-        header#header
+        header#header         
+
           .logo
             span.fas.fa-microphone.fa-3x
           .content
             .inner
-              h1 {{ inner.h1.tw }}
-              p {{ inner.p.tw }}
+              //- h1 {{ inner.h1.tw }}
+              h1 {{ $t("inner.h1") }}
+              p {{ $t("inner.p") }}
           nav
-            ul
+            //- ul
               li(v-for='nav in navs')
                 a(:href='nav.link') {{ nav.item }}
+            ul
+              li
+                a(:href="$t('navs.link1')") {{ $t("navs.item1") }}
+              li
+                a(:href="$t('navs.link2')") {{ $t("navs.item2") }}
+              li
+                a(:href="$t('navs.link3')") {{ $t("navs.item3") }}
+              li
+                a(:href="$t('navs.link4')") {{ $t("navs.item4") }}
+              li
+                a(:href="$t('navs.link5')") {{ $t("navs.item5") }}
               
         // Main
         #main
 
+          
+
           // 簡介
           article#about
-            h2.major {{ navs[0].item }}
+            h2.major {{ $t("navs.item1") }}
             span.image.main
-              img(src='images/info.jpg', alt='')
-            p 文瀚大學唸的是大傳（主修電子、公關）與戲劇（主修編劇、導演）。曾是兢兢業業小記者，也曾是爆肝攝影記者；曾演過舞台劇，也曾嘗試不是人幹的導演；曾是電台DJ主播，也曾玩配音、玩到全國第三；曾是全校主播大賽雙料冠軍，也曾獲選全國大專優秀青年；喜愛影像與聲音創作，攝影與廣播類，也都曾全國前三。
-            p 活到現在，許多戲劇性的曾經、成為文瀚人生的養分，大體言之，文瀚只是汲汲營營於生活、且平凡不過的庸俗人，不過熱情與態度，可能是文瀚與一般人、還稍稍有些不同的地方。
-              small.small 了解更多&nbsp;&#8594;&nbsp;
-              a.vocustaiwan(href='https://vocustaiwan.fandom.com/zh-tw/wiki/%E6%9D%8E%E6%96%87%E7%80%9A', target="_blank") 文瀚的台灣配音維基
-            blockquote.vocustaiwan 將一切榮耀，歸給主。
+              img(src='images/info.jpg', alt='配音員李文瀚')
+            p {{ $t("about.p1") }}
+            p {{ $t("about.p2") }}
+              small.small {{ $t("about.small") }} &nbsp;&#8594;&nbsp;
+              a.vocustaiwan(href='https://vocustaiwan.fandom.com/zh-tw/wiki/%E6%9D%8E%E6%96%87%E7%80%9A', target="_blank") {{ $t("about.a") }}
+            blockquote.vocustaiwan {{ $t("about.blockquote") }}
 
           // 資歷
           article#resume
-            h2.major {{ navs[1].item }}
+            h2.major {{ $t("navs.item2") }}
             //- 學業資歷
             h3.major
               span.fas.fa-bookmark
-              |  學業資歷
+              |  {{ $t("resume.resume1") }}
             ul
-              li 台北廣告工程商業同業公會92（2004／06／19）、93（2005／05／28）、94（2006／05／27）、95（2007／06／08）學年度會員子女獎學金。
-              li 96年度救國團全國大專優秀青年獎學金（2007／03／28）。
-              li 私立中國文化大學95學年度「張其昀先生紀念獎學金─特殊才藝傑出表現」（95學年度第二學期）。
-              li 國泰金融集團2007客戶子女獎學金（2007／06）。
+              li {{ $t("resume1.li1") }}
+              li {{ $t("resume1.li2") }}
+              li {{ $t("resume1.li3") }}
+              li {{ $t("resume1.li4") }}
             br
             //- 得獎資歷
             h3.major
               span.fas.fa-trophy
-              |  得獎資歷
+              |  {{ $t("resume.resume2") }}
             ul
-              li 96學年度救國團全國大專優秀青年（2007／03／28）。
-            h4 播音類
+              li {{ $t("resume2.li1") }}
+            h4 {{ $t("resume2list.list1") }}
             ul
-              li 國立交通大學數位創意中心「尋找校園聲優達人」競賽─聲優銅賞獎（2005／11／25）。
-              li 第二屆台灣大專院校「貳零紀念」影音聯展─廣播作品類貳獎（2006／04／30）。
-              li 第四屆華岡電視新聞台主播大賽─第一名（2006／05／15）。
-              li 第九屆華岡電台主播大賽─國語組第一名（2006／05／19）。
-              li 第十五屆時報廣告金犢獎─廣播廣告類入圍×1＆技術類文案對白項初審評審團優選獎×1（2006／05）。
-              li 第一屆「TVBS大學新聞獎」─紀錄報導類入圍×1（2006／11／12）。
-              li 第四屆國立中正大學「新傳獎」─最佳外校廣播獎（2007／04／26）。
-              li 第三屆台灣大專院校「貳零紀念」影音聯展─廣播作品類廣播廣告入圍×1（2007／04／28）。
-            h4 攝影類
+              li {{ $t("resume2.li2") }}
+              li {{ $t("resume2.li3") }}
+              li {{ $t("resume2.li4") }}
+              li {{ $t("resume2.li5") }}
+              li {{ $t("resume2.li6") }}
+              li {{ $t("resume2.li7") }}
+              li {{ $t("resume2.li8") }}
+              li {{ $t("resume2.li9") }}
+            h4 {{ $t("resume2list.list2") }}
             ul
-              li 「2003文化大學攝影比賽」─傳統組第二名＆入選×3（2003／12／25）。
-              li 救國團台北市工青二隊北青攝影聯誼會「象山少女人像」攝影比賽二月份觀摩月賽─入選×4（2004／03／10）。
-              li 第二屆台灣大專院校「貳零紀念」影音聯展─數位攝影類（單張作品）參獎＆入圍×2（2006／04／30）。
-              li 第三屆「聚焦東吳─東吳的變與不變」攝影比賽─第一季季冠軍＆決賽銅牌獎＆佳作×2（2006／06）。
-              li 「2006國家地理國際攝影大賽」台灣區選拔賽─自然世界類佳作×1（2006／06）。
-              li 2006聯合勸募「同學你嘛幫幫忙─創意愛心 請你秀SHOW」徵案比賽─攝影類第三名（2006／08／17）。
-              li 第三屆台灣大專院校「貳零紀念」影音聯展─數位攝影類（單張作品）入圍×1（2007／04／28）。
-            h4 企劃類
+              li {{ $t("resume2.li10") }}
+              li {{ $t("resume2.li11") }}
+              li {{ $t("resume2.li12") }}
+              li {{ $t("resume2.li13") }}
+              li {{ $t("resume2.li14") }}
+              li {{ $t("resume2.li15") }}
+              li {{ $t("resume2.li16") }}
+            h4 {{ $t("resume2list.list3") }}
             ul
-              li 私立中國文化大學94學年度「華岡要更好」校園創意大賽─活動企劃組優等獎（2005／12／20）。
+              li {{ $t("resume2.li17") }}
             br
             //- 主持資歷
             h3.major
               span.fas.fa-microphone
-              |  主持資歷
+              |  {{ $t("resume.resume3") }}
             ul
-              li 國立教育廣播電臺─單元節目「校園DJ SHOW─寰宇啟示錄」製作、主持（2005／05〜08）。
-              li 私立中國文化大學新聞系華岡實習廣播電台─單元節目「自在有樂町」製作、主持（94〜95學年度）。
-              li 私立中國文化大學新聞系華岡實習廣播電台─主播（95學年度第一學期）。
-              li GOLD FM聯播網台北健康電台─節目部助理新聞編播（2009／05～2010／05）。
-              li 張樂「2012『愛，時光旅程』攝影展」發表會─主持（2012／02／10）。
-              li 「2014桐舟共渡─龍潭鄉歸鄉文化季」桃園縣縣長盃龍舟競賽─實況轉播（2014／05／31～06／02）。
+              li {{ $t("resume3.li1") }}
+              li {{ $t("resume3.li2") }}
+              li {{ $t("resume3.li3") }}
+              li {{ $t("resume3.li4") }}
+              li {{ $t("resume3.li5") }}
+              li {{ $t("resume3.li6") }}
             br
             //- 演出資歷
             h3.major
               span.fas.fa-bullhorn
-              |  演出資歷
+              |  {{ $t("resume.resume4") }}
             ul
-              li 大可樂果劇團2004年度公演「長白山上」─飾獨眼龍（2004／12／14）。
-              li 第十七屆台北國際書展新天鵝堡（德國桌上遊戲）有限公司促銷戲《空中花園》、《亞美利哥》導演（2009／02／07）。
+              li {{ $t("resume4.li1") }}
+              li {{ $t("resume4.li2") }}
             br
             //- 教學資歷
             h3.major
               span.fas.fa-book
-              |  教學資歷
+              |  {{ $t("resume.resume5") }}
             ul
-              li 國立臺灣科學教育館96年暑期「繪聲魔法─科學廣播營」助教（2007／08／06～08）。
-              li 偶像藝人呂金象之聲音訓練（2016／03／20～2017／03／20，2017／04／20～2018／04／20）。
-              li 社團法人中華影視造型文化創意協會106下半年度「播音訓練及活動主持實務班」之播音課座講師（2017／11／04）。
-              li 臺北市北投社區大學「播音、配音世界好好玩」課程講師（2018／09／01～2019／08／31）。
-              li 社團法人中華美容造型設計教育學會107上年度產業人才投資方案「婚禮＆活動主持訓練班─口語訓練課程」講師（2018／09／20）。
-              li 社團法人中華影視造型文化創意協會107下半年度「婚禮主持訓練班第2期」─口語訓練講師（2019／01／26）。
-              li 社團法人中華美容造型設計教育學會108下年度產業人才投資方案「婚顧＆活動主持訓練實務班」─口語訓練課程講師（2019／11／10）。
-              li 幸福故事館婚禮顧問公司婚禮主持進階班「第一堂課婚禮主持人的基本功─把話說好」之授課講師（2019／12／21）。
+              li {{ $t("resume5.li1") }}
+              li {{ $t("resume5.li2") }}
+              li {{ $t("resume5.li3") }}
+              li {{ $t("resume5.li4") }}
+              li {{ $t("resume5.li5") }}
+              li {{ $t("resume5.li6") }}
+              li {{ $t("resume5.li7") }}
+              li {{ $t("resume5.li8") }}
               //- 演講／受訪資歷
             h3.major
               span.fas.fa-microphone
-              |  演講／受訪資歷
+              |  {{ $t("resume.resume6") }}
             ul
-              li 私立淡江大學大傳系企業導師請益─「聲優的心事誰人知」（2013／10／09）。
-              li 私立輔仁大學影傳系、大傳系聲音訓練專題演講─「配音工作甘苦談─你不知道的職場潛規則」（2015／06／05）。
-              li 私立佛光大學傳播系大一課程「國語正音與口語表達」之學生專訪（2015／12／12）。
-              li News 98電台現場節目「愛你22小時」（王文華主持）之受邀來賓（2015／12／14）。
-              li 私立淡江大學105年度教育部獎勵大學教學卓越計畫／綜合型大學排名專題演講─「配音兩三事」（2016／11／21）。
+              li {{ $t("resume6.li1") }}
+              li {{ $t("resume6.li2") }}
+              li {{ $t("resume6.li3") }}
+              li {{ $t("resume6.li4") }}
+              li {{ $t("resume6.li5") }}
             //- 配音資歷
             h3.major
               span.fas.fa-microphone
-              |  配音資歷
+              |  {{ $t("resume.resume7") }}
             ul
-              li 目前主要配音範疇，含括廣告、簡介、節目／單元旁白、紀錄片、電視／電影預告、（兒童）有聲書、典禮報序、戲劇類…等。
+              li {{ $t("resume7.li1") }}
                 br
-                small.small 了解更多&nbsp;&#8594;&nbsp;
-                a.vocustaiwan(href='https://vocustaiwan.fandom.com/zh-tw/wiki/%E6%9D%8E%E6%96%87%E7%80%9A', target="_blank") 文瀚的台灣配音維基
+                small.small {{ $t("about.small") }} &nbsp;&#8594;&nbsp;
+                a.vocustaiwan(href='https://vocustaiwan.fandom.com/zh-tw/wiki/%E6%9D%8E%E6%96%87%E7%80%9A', target="_blank") {{ $t("about.a") }}
               
         
 
           // 作品
           article#work
-            h2.major {{ navs[2].item }}
+            h2.major {{ $t("navs.item3") }}
+            //- 商業廣告類
             h3.major
               span.fas.fa-microphone-alt
-              |  商業廣告類
+              |  {{ $t("work.group1") }}
+            //- 活力促銷類  
             .audios
-              //- audios1  
-              h4 活力促銷類
-              figure(v-for="audio in audios1")
-                audio(controls, preload='audio', :src='audio.mp3', onplay="play()", onpause="pause()", controlsList="nodownload")
+              h4 {{ $t("work1list.work1") }}
+              figure
+                audio(controls, preload='audio', :src="$t('work1.audio1')", onplay="play()", onpause="pause()", controlsList="nodownload")
                 .txt
-                  figcaption {{ audio.title }}
+                  figcaption {{ $t("work1.title1") }}
                   .download
-                    a(:href="audio.mp3", target="_blank", download) DOWNLOAD
+                    a(:href="$t('work1.audio1')", target="_blank", download) DOWNLOAD
+              figure
+                audio(controls, preload='audio', :src="$t('work1.audio2')", onplay="play()", onpause="pause()", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work1.title2") }}
+                  .download
+                    a(:href="$t('work1.audio2')", target="_blank", download) DOWNLOAD
+              figure
+                audio(controls, preload='audio', :src="$t('work1.audio3')", onplay="play()", onpause="pause()", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work1.title3") }}
+                  .download
+                    a(:href="$t('work1.audio3')", target="_blank", download) DOWNLOAD
+              figure
+                audio(controls, preload='audio', :src="$t('work1.audio4')", onplay="play()", onpause="pause()", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work1.title4") }}
+                  .download
+                    a(:href="$t('work1.audio4')", target="_blank", download) DOWNLOAD
+            //- 沈穩質感類  
             .audios
-              //- audios2
-              h4 沈穩質感類
-              figure(v-for="audio in audios2")
-                audio(controls, preload='audio', :src='audio.mp3', onplay="play()", onpause="pause()", controlsList="nodownload")
+              h4 {{ $t("work1list.work2") }}
+              figure
+                audio(controls, preload='audio', :src="$t('work2.audio1')", onplay="play()", onpause="pause()", controlsList="nodownload")
                 .txt
-                  figcaption {{ audio.title }}
+                  figcaption {{ $t("work2.title1") }}
                   .download
-                    a(:href="audio.mp3", target="_blank", download) DOWNLOAD
+                    a(:href="$t('work2.audio1')", target="_blank", download) DOWNLOAD
+              figure
+                audio(controls, preload='audio', :src="$t('work2.audio2')", onplay="play()", onpause="pause()", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work2.title2") }}
+                  .download
+                    a(:href="$t('work2.audio2')", target="_blank", download) DOWNLOAD
+              figure
+                audio(controls, preload='audio', :src="$t('work2.audio3')", onplay="play()", onpause="pause()", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work2.title3") }}
+                  .download
+                    a(:href="$t('work2.audio3')", target="_blank", download) DOWNLOAD
+              figure
+                audio(controls, preload='audio', :src="$t('work2.audio4')", onplay="play()", onpause="pause()", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work2.title4") }}
+                  .download
+                    a(:href="$t('work2.audio4')", target="_blank", download) DOWNLOAD
+              figure
+                audio(controls, preload='audio', :src="$t('work2.audio5')", onplay="play()", onpause="pause()", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work2.title5") }}
+                  .download
+                    a(:href="$t('work2.audio5')", target="_blank", download) DOWNLOAD
+            //- 知性旁白類
             .audios
-              //- audios3
-              h4 知性旁白類
-              figure(v-for="audio in audios3")
-                audio(controls, preload='audio', :src='audio.mp3', onplay="play()", onpause="pause()", controlsList="nodownload")
+              h4 {{ $t("work1list.work3") }}
+              figure
+                audio(controls, preload='audio', :src="$t('work3.audio1')", onplay="play()", onpause="pause()", controlsList="nodownload")
                 .txt
-                  figcaption {{ audio.title }}
+                  figcaption {{ $t("work3.title1") }}
                   .download
-                    a(:href="audio.mp3", target="_blank", download) DOWNLOAD
+                    a(:href="$t('work3.audio1')", target="_blank", download) DOWNLOAD
+              figure
+                audio(controls, preload='audio', :src="$t('work3.audio2')", onplay="play()", onpause="pause()", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work3.title2") }}
+                  .download
+                    a(:href="$t('work3.audio2')", target="_blank", download) DOWNLOAD
+              figure
+                audio(controls, preload='audio', :src="$t('work3.audio3')", onplay="play()", onpause="pause()", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work3.title3") }}
+                  .download
+                    a(:href="$t('work3.audio3')", target="_blank", download) DOWNLOAD
+            //- 專業肯定類
             .audios
-              //- audios4
-              h4 專業肯定類
-              figure(v-for="audio in audios4")
-                audio(controls, preload='audio', :src='audio.mp3', onplay="play()", onpause="pause()", controlsList="nodownload")
+              h4 {{ $t("work1list.work4") }}
+              figure
+                audio(controls, preload='audio', :src="$t('work4.audio1')", onplay="play()", onpause="pause()", controlsList="nodownload")
                 .txt
-                  figcaption {{ audio.title }}
+                  figcaption {{ $t("work4.title1") }}
                   .download
-                    a(:href="audio.mp3", target="_blank", download) DOWNLOAD
+                    a(:href="$t('work4.audio1')", target="_blank", download) DOWNLOAD
+              figure
+                audio(controls, preload='audio', :src="$t('work4.audio2')", onplay="play()", onpause="pause()", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work4.title2") }}
+                  .download
+                    a(:href="$t('work4.audio2')", target="_blank", download) DOWNLOAD
+            //- 角色扮演類
             .audios
-              //- audios5
-              h4 角色扮演類
-              figure(v-for="audio in audios5")
-                audio(controls, preload='audio', :src='audio.mp3', onplay="play()", onpause="pause()", controlsList="nodownload")
+              h4 {{ $t("work1list.work5") }}
+              figure
+                audio(controls, preload='audio', :src="$t('work5.audio1')", onplay="play()", onpause="pause()", controlsList="nodownload")
                 .txt
-                  figcaption {{ audio.title }}
+                  figcaption {{ $t("work5.title1") }}
                   .download
-                    a(:href="audio.mp3", target="_blank", download) DOWNLOAD
-            br
+                    a(:href="$t('work5.audio1')", target="_blank", download) DOWNLOAD
+              figure
+                audio(controls, preload='audio', :src="$t('work5.audio2')", onplay="play()", onpause="pause()", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work5.title2") }}
+                  .download
+                    a(:href="$t('work5.audio2')", target="_blank", download) DOWNLOAD
+              figure
+                audio(controls, preload='audio', :src="$t('work5.audio3')", onplay="play()", onpause="pause()", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work5.title3") }}
+                  .download
+                    a(:href="$t('work5.audio3')", target="_blank", download) DOWNLOAD
+            //- 工商簡介類
             h3.major
               span.fas.fa-microphone-alt
-              |  工商簡介類
+              |  {{ $t("work.group2") }}
             .audios
-              //- audios6
-              h4 
-              figure(v-for="audio in audios6")
-                audio(controls, preload='audio', :src='audio.mp3', onplay="play()", onpause="pause()", controlsList="nodownload")
+              figure
+                audio(controls, preload='audio', :src="$t('group2.audio1')", onplay="play()", onpause="pause()", controlsList="nodownload")
                 .txt
-                  figcaption {{ audio.title }}
+                  figcaption {{ $t("group2.title1") }}
                   .download
-                    a(:href="audio.mp3", target="_blank", download) DOWNLOAD
-                                  
+                    a(:href="$t('group2.audio1')", target="_blank", download) DOWNLOAD         
             
           
           // 聯絡
           article#contact
-            h2.major {{ navs[4].item }}
-            p 如果您有任何關於聲音領域的需求，歡迎與我聯絡、一起聊聊！          
+            h2.major {{ $t("navs.item5") }}
+            p {{ $t("contact.p") }}         
             ul
-              li LINE：liwenhan.213
-              li WeChat：liwenhan_213
-              li Cell Phone：
-                a(href='tel:+886-922-145-947') +886-922-145-947
+              li {{ $t("contact.line") }}  
+              li {{ $t("contact.wechat") }}  
+              li {{ $t("contact.phone") }}  
+                a(href='tel:+886-922-145-947') {{ $t("contact.tel") }}
               li E-mail：
-                a(href='mailto:liwenhan.213＠gmail.com') liwenhan.213＠gmail.com
+                a(href='mailto:liwenhan.213＠gmail.com') {{ $t("contact.mail") }}
 
           
           // 留言
           article#message
-            h2.major {{ navs[3].item }}
+            h2.major {{ $t("navs.item4") }}
             form
               .fields
                 .field.half
-                  label(for='name') * 姓名
-                  input#name(type='text', v-model="form_name.value", placeholder="請輸入姓名")
+                  label(for='name') {{ $t("message.name") }} 
+                  input#name(type='text', v-model="form_name.value", :placeholder="$t('message.nameplaceholder')")
                 .field.half
-                  label(for='tel') * 手機
-                  input#name(type='text', v-model="form_tel.value", placeholder="0912345678")
+                  label(for='tel') {{ $t("message.tel") }} 
+                  input#name(type='text', v-model="form_tel.value", :placeholder="$t('message.telplaceholder')")
                 .field.half
-                  label(for='email') * E-mail
-                  input#email(type='text', v-model="form_email.value", placeholder="xx@xxx.com")
+                  label(for='email') {{ $t("message.email") }} 
+                  input#email(type='text', v-model="form_email.value", :placeholder="$t('message.emailplaceholder')")
                 .field
-                  label(for='message') * 留言內容
+                  label(for='message') {{ $t("message.message") }} 
                   textarea#message(type='text', v-model="form_message.value", rows='4')
               ul.actions
                 li
@@ -302,13 +396,14 @@ html
           p.copyright
             | Design 
             a(href='https://html5up.net', target="_blank") HTML5 UP
-            | 　|　網站版權 © 2019 配音員李文瀚的聲創／教學世界
+            | 　|　 {{ $t("inner.copyright") }}
 
 
       // BG
       #bg
     // Scripts
     script(src='//cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js')
+    script(src="//cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.js")
     script(src='assets/js/jquery.min.js')
     script(src='assets/js/browser.min.js')
     script(src='assets/js/breakpoints.min.js')

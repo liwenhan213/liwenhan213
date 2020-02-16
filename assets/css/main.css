@@ -5,7 +5,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-@import url("https://fonts.googleapis.com/css?family=Noto+Serif+TC:700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif+SC|Noto+Serif+TC&display=swap");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
@@ -68,9 +68,9 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: inherit; text-decoration: none; }
 
 h1.major, h2.major, h3.major, h4.major, h5.major, h6.major { border-bottom: solid 1px #ffffff; width: -moz-max-content; width: -webkit-max-content; width: -ms-max-content; width: max-content; padding-bottom: 0.5rem; margin: 0 0 2rem 0; }
 
-h1 { font-size: 2.25rem; font-family: "Noto Serif TC", serif, -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; line-height: 1.3; letter-spacing: 0.5rem; }
+h1 { font-size: 2.25rem; font-family: "Noto Serif TC", "Noto Serif SC", serif, -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; line-height: 1.3; letter-spacing: 0.5rem; }
 
-h2 { font-size: 1.5rem; font-family: "Noto Serif TC", serif, -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; line-height: 1.4; letter-spacing: 0.5rem; }
+h2 { font-size: 1.5rem; font-family: "Noto Serif TC", "Noto Serif SC", serif, -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; line-height: 1.4; letter-spacing: 0.5rem; }
 
 h3 { font-size: 1rem; }
 
@@ -80,7 +80,7 @@ h5 { font-size: 0.7rem; }
 
 h6 { font-size: 0.6rem; }
 
-.vocustaiwan { font-family: "Noto Serif TC", serif, -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; letter-spacing: 2px; }
+.vocustaiwan { font-family: "Noto Serif TC", "Noto Serif SC", serif, -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; letter-spacing: 2px; }
 
 @media screen and (max-width: 736px) { h1 { font-size: 1.75rem; line-height: 1.4; }
   h2 { font-size: 1.25em; line-height: 1.5; } }
@@ -345,6 +345,22 @@ body.is-article-visible #bg:after { -moz-transform: scale(1.0825); -webkit-trans
 body.is-preload #bg:before { background-color: #000000; }
 
 @media screen and (max-width: 767px) { #bg:after { background-position: 60% 0; } }
+
+.language { position: absolute; right: 10px; top: 10px; width: 90px; }
+
+.language span { margin-left: 10px; }
+
+.language a { display: inline-block; width: 100%; text-align: center; cursor: pointer; padding: 4px 0; }
+
+.language a:hover { border-bottom: 0; }
+
+.language .change { position: relative; }
+
+.language .change.active { display: none; }
+
+.language .change a { -webkit-transition: all .3s; -o-transition: all .3s; transition: all .3s; }
+
+.language .change a:hover { color: #0B9ED9; }
 
 /* Wrapper */
 #wrapper { display: -moz-flex; display: -webkit-flex; display: -ms-flex; display: -webkit-box; display: -ms-flexbox; display: flex; -moz-flex-direction: column; -webkit-flex-direction: column; -ms-flex-direction: column; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; -moz-align-items: center; -webkit-align-items: center; -ms-align-items: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -moz-justify-content: space-between; -webkit-justify-content: space-between; -ms-justify-content: space-between; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; position: relative; min-height: 100vh; width: 100%; padding: 4rem 2rem; z-index: 3; }
