@@ -497,7 +497,7 @@ header#header .logo { display: -webkit-box; display: -ms-flexbox; display: flex;
 
 #contact a:hover, #work a:hover, #resume a:hover, #about a:hover, footer a:hover { border-bottom: dotted 1px #0B9ED9; }
 
-#contact a.vocustaiwan, #work a.vocustaiwan, #resume a.vocustaiwan, #about a.vocustaiwan, footer a.vocustaiwan { font-size: 18px; }
+#contact a.vocustaiwan, #work a.vocustaiwan, #resume a.vocustaiwan, #about a.vocustaiwan, footer a.vocustaiwan { font-size: 20px; font-weight: bold; }
 
 footer a { color: #ffffff; }
 
