@@ -1,5 +1,9 @@
 'use strict'
 
+// 解決 Vue Instance 完成編譯前顯示變數的問題
+Vue.config.debug = true
+Vue.config.devtools = true
+
 // 引入語言包
 Vue.use(VueI18n)
 

@@ -59,6 +59,10 @@ html
     <![endif]-->    
     = "\n"    
 
+    style.
+      [v-cloak] {
+        display: none;
+      }
 
   body.is-preload
     style(type='text/css').
@@ -68,7 +72,7 @@ html
         -webkit-user-select: none;
         -ms-user-select: none;
       }
-    #app
+    #app(v-cloak)
       // Wrapper
       #wrapper
         
