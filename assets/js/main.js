@@ -2,7 +2,7 @@
 	Dimension by HTML5 UP	html5up.net | @ajlkn  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-;(function($) {
+;(function ($) {
   var $window = $(window),
     $body = $('body'),
     $wrapper = $('#wrapper'),
@@ -18,12 +18,12 @@
     medium: ['737px', '980px'],
     small: ['481px', '736px'],
     xsmall: ['361px', '480px'],
-    xxsmall: [null, '360px']
+    xxsmall: [null, '360px'],
   })
 
   // Play initial animations on page load.
-  $window.on('load', function() {
-    window.setTimeout(function() {
+  $window.on('load', function () {
+    window.setTimeout(function () {
       $body.removeClass('is-preload')
     }, 100)
   })
@@ -33,10 +33,10 @@
     var flexboxFixTimeoutId
 
     $window
-      .on('resize.flexbox-fix', function() {
+      .on('resize.flexbox-fix', function () {
         clearTimeout(flexboxFixTimeoutId)
 
-        flexboxFixTimeoutId = setTimeout(function() {
+        flexboxFixTimeoutId = setTimeout(function () {
           if ($wrapper.prop('scrollHeight') > $window.height())
             $wrapper.css('height', 'auto')
           else $wrapper.css('height', '100vh')
@@ -60,7 +60,7 @@
     locked = false
 
   // Methods.
-  $main._show = function(id, initial) {
+  $main._show = function (id, initial) {
     var $article = $main_articles.filter('#' + id)
 
     // No such article? Bail.
@@ -95,7 +95,7 @@
 
       // Unmark as switching.
       setTimeout(
-        function() {
+        function () {
           $body.removeClass('is-switching')
         },
         initial ? 1000 : 0
@@ -115,7 +115,7 @@
       $currentArticle.removeClass('active')
 
       // Show article.
-      setTimeout(function() {
+      setTimeout(function () {
         // Hide current article.
         $currentArticle.hide()
 
@@ -123,14 +123,14 @@
         $article.show()
 
         // Activate article.
-        setTimeout(function() {
+        setTimeout(function () {
           $article.addClass('active')
 
           // Window stuff.
           $window.scrollTop(0).triggerHandler('resize.flexbox-fix')
 
           // Unlock.
-          setTimeout(function() {
+          setTimeout(function () {
             locked = false
           }, delay)
         }, 25)
@@ -143,7 +143,7 @@
       $body.addClass('is-article-visible')
 
       // Show article.
-      setTimeout(function() {
+      setTimeout(function () {
         // Hide header, footer.
         $header.hide()
         $footer.hide()
@@ -153,14 +153,14 @@
         $article.show()
 
         // Activate article.
-        setTimeout(function() {
+        setTimeout(function () {
           $article.addClass('active')
 
           // Window stuff.
           $window.scrollTop(0).triggerHandler('resize.flexbox-fix')
 
           // Unlock.
-          setTimeout(function() {
+          setTimeout(function () {
             locked = false
           }, delay)
         }, 25)
@@ -168,7 +168,7 @@
     }
   }
 
-  $main._hide = function(addState) {
+  $main._hide = function (addState) {
     var $article = $main_articles.filter('.active')
 
     // Article not visible? Bail.
@@ -218,7 +218,7 @@
     $article.removeClass('active')
 
     // Hide article.
-    setTimeout(function() {
+    setTimeout(function () {
       // Hide article, main.
       $article.hide()
       $main.hide()
@@ -228,14 +228,14 @@
       $header.show()
 
       // Unmark as visible.
-      setTimeout(function() {
+      setTimeout(function () {
         $body.removeClass('is-article-visible')
 
         // Window stuff.
         $window.scrollTop(0).triggerHandler('resize.flexbox-fix')
 
         // Unlock.
-        setTimeout(function() {
+        setTimeout(function () {
           locked = false
         }, delay)
       }, 25)
@@ -243,51 +243,29 @@
   }
 
   // Articles.
-  $main_articles.each(function() {
+  $main_articles.each(function () {
     var $this = $(this)
 
     // Close.
     $('<div class="close">Close</div>')
       .appendTo($this)
-      .on('click', function() {
+      .on('click', function () {
         location.hash = ''
       })
 
     // Prevent clicks from inside article from bubbling.
-    $this.on('click', function(event) {
+    $this.on('click', function (event) {
       event.stopPropagation()
-      console.log('close 觸發 allPause 關閉 audio')
-      var players = document.getElementsByTagName('audio')
-      function allPause(players, ind) {
-        for (var index = 0; index < players.length; index++) {
-          var element = players[index]
-          if (index !== ind) {
-            element.pause()
-          }
-        }
-      }
-      allPause(players, -1)
     })
   })
 
   // Events.
-  $body.on('click', function(event) {
+  $body.on('click', function (event) {
     // Article visible? Hide.
     if ($body.hasClass('is-article-visible')) $main._hide(true)
-    console.log('is-article-visible 觸發 allPause 關閉 audio')
-    var players = document.getElementsByTagName('audio')
-    function allPause(players, ind) {
-      for (var index = 0; index < players.length; index++) {
-        var element = players[index]
-        if (index !== ind) {
-          element.pause()
-        }
-      }
-    }
-    allPause(players, -1)
   })
 
-  $window.on('keyup', function(event) {
+  $window.on('keyup', function (event) {
     switch (event.keyCode) {
       case 27:
         // Article visible? Hide.
@@ -300,7 +278,26 @@
     }
   })
 
-  $window.on('hashchange', function(event) {
+  // 客製部份
+  // （URL中#後面的部分）改變時就會觸發  hashchange 事件
+  $window.on('hashchange', function (event) {
+    // Empty hash? 設置或取得當前URL中的錨
+
+    if (location.hash == '' || location.hash == '#') {
+      // Prevent default.
+      event.preventDefault()
+      event.stopPropagation()
+
+      // 觸發 hashchange 事件時，將全部音頻關閉
+      var players = document.getElementsByTagName('audio')
+      for (let index = 0; index < players.length; index++) {
+        const element = players[index]
+        element.pause()
+      }
+    }
+  })
+
+  $window.on('hashchange', function (event) {
     // Empty hash?
     if (location.hash == '' || location.hash == '#') {
       // Prevent default.
@@ -331,11 +328,11 @@
       $htmlbody = $('html,body')
 
     $window
-      .on('scroll', function() {
+      .on('scroll', function () {
         oldScrollPos = scrollPos
         scrollPos = $htmlbody.scrollTop()
       })
-      .on('hashchange', function() {
+      .on('hashchange', function () {
         $window.scrollTop(oldScrollPos)
       })
   }
@@ -348,7 +345,7 @@
 
   // Initial article.
   if (location.hash != '' && location.hash != '#')
-    $window.on('load', function() {
+    $window.on('load', function () {
       $main._show(location.hash.substr(1), true)
     })
 })(jQuery)
