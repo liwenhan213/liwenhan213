@@ -55,6 +55,23 @@ html
     link(rel='stylesheet', href='assets/css/main.css')
     noscript
       link(rel='stylesheet', href='assets/css/noscript.css')
+      
+    //- Google Search Gallery 結構化資料
+    script(type='application/ld+json').
+      {
+        "@context": "https://schema.org/",
+        "@type": "WebSite",
+        "publisher":{"@type":"Organization",
+        "name":"配音員李文瀚的聲創／教學世界",
+        "logo":{"@type":"ImageObject","url":"https://liwenhan213.idv.tw/images/favicon.png"}},
+        "datePublished":"2020-05-07T20:34:00+08:00",
+        "dateModified":"2020-05-07T20:34:00+08:00",
+        "thumbnailUrl":"https://liwenhan213.idv.tw/images/fb.jpg",
+        "name": "配音員李文瀚的聲創／教學世界",
+        "url": "https://liwenhan213.idv.tw/",
+        "description": "文瀚大學唸的是大傳（主修電子、公關）與戲劇（主修編劇、導演）。曾是兢兢業業小記者，也曾是爆肝攝影記者；曾演過舞台劇，也曾嘗試不是人幹的導演；曾是電台DJ主播，也曾玩配音、玩到全國第三；曾是全校主播大賽雙料冠軍，也曾獲選全國大專優秀青年；喜愛影像與聲音創作，攝影與廣播類，也都曾全國前三。",
+        "keywords": ["配音員","李文瀚","聲創"]
+      }
 
     = "\n"
     //- 支援 html5
