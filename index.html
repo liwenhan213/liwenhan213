@@ -28,7 +28,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="配音員李文瀚的聲創／教學世界">
-    <meta name="keywords" content="配音員, 配音教學, 李文瀚, 台灣配音維基, 聲創">
+    <meta name="keywords" content="配音員, 李文瀚, 聲創">
     <link href="https://liwenhan213.idv.tw/images/favicon.png" rel="apple-touch-icon" sizes="120x120">
     <link href="https://liwenhan213.idv.tw/images/favicon.png" rel="apple-touch-icon" sizes="180x180">
     <link href="https://liwenhan213.idv.tw/images/favicon.png" rel="apple-touch-icon" sizes="167x167">
@@ -51,7 +51,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         "name": "配音員李文瀚的聲創／教學世界",
         "url": "https://liwenhan213.idv.tw/",
         "description": "文瀚大學唸的是大傳（主修電子、公關）與戲劇（主修編劇、導演）。曾是兢兢業業小記者，也曾是爆肝攝影記者；曾演過舞台劇，也曾嘗試不是人幹的導演；曾是電台DJ主播，也曾玩配音、玩到全國第三；曾是全校主播大賽雙料冠軍，也曾獲選全國大專優秀青年；喜愛影像與聲音創作，攝影與廣播類，也都曾全國前三。",
-        "keywords": ["配音員","李文瀚","聲創", "配音教學", "台灣配音維基"]
+        "keywords": ["配音員","李文瀚","聲創"]
       }
       
     </script>
@@ -63,10 +63,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
       [v-cloak] {
         display: none;
       }
-      
     </style>
   </head>
-  <body class="is-preload">
+  <body class="is-preload" oncontextmenu="event.returnValue=false" onselectstart="event.returnValue=false" onSelectStart="window.event.returnValue=false" onDragStart="window.event.returnValue=false">
     <style type="text/css">
       body {
         user-select: none;
@@ -78,7 +77,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     <div id="app" v-cloak>
       <!-- Wrapper-->
       <div id="wrapper">
-        <!-- 繁簡切換-->
+        <!-- 繁簡切換        -->
         <div class="language"><a href="#" @click.prevent="languageChange = !languageChange">{{ language }}<span class="fas fa-caret-down"></span></a>
           <div class="change" :class="{ 'active': languageChange == true}" @click.prevent="languageChange = !languageChange"><a href="#" @click.prevent="changeTW">繁體中文</a><a href="#" @click.prevent="changeCN">简体中文</a></div>
         </div>
@@ -87,17 +86,17 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
           <div class="logo"><span class="fas fa-microphone fa-3x"></span></div>
           <div class="content">
             <div class="inner">
-              <h1><span data-nosnippet>{{ $t("inner.h1") }}</span></h1>
-              <p><span data-nosnippet>{{ $t("inner.p") }}</span></p>
+              <h1>{{ $t("inner.h1") }}</h1>
+              <p>{{ $t("inner.p") }}</p>
             </div>
           </div>
           <nav>
             <ul>
-              <li><a :href="$t('navs.link1')"><span data-nosnippet>{{ $t("navs.item1") }}</span></a></li>
-              <li><a :href="$t('navs.link2')"><span data-nosnippet>{{ $t("navs.item2") }}</span></a></li>
-              <li><a :href="$t('navs.link3')"><span data-nosnippet>{{ $t("navs.item3") }}</span></a></li>
-              <li><a :href="$t('navs.link4')"><span data-nosnippet>{{ $t("navs.item4") }}</span></a></li>
-              <li><a :href="$t('navs.link5')"><span data-nosnippet>{{ $t("navs.item5") }}</span></a></li>
+              <li><a :href="$t('navs.link1')">{{ $t("navs.item1") }}</a></li>
+              <li><a :href="$t('navs.link2')">{{ $t("navs.item2") }}</a></li>
+              <li><a :href="$t('navs.link3')">{{ $t("navs.item3") }}</a></li>
+              <li><a :href="$t('navs.link4')">{{ $t("navs.item4") }}</a></li>
+              <li><a :href="$t('navs.link5')">{{ $t("navs.item5") }}</a></li>
             </ul>
           </nav>
         </header>

@@ -3,6 +3,10 @@
 */
 
 ;(function ($) {
+  // 鎖右鍵
+  document.oncontextmenu=new Function("event.returnValue=false");
+  document.onselectstart=new Function("event.returnValue=false"); 
+
   var $window = $(window),
     $body = $('body'),
     $wrapper = $('#wrapper'),

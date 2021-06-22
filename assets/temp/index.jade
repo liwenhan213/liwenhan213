@@ -85,8 +85,8 @@ html
       [v-cloak] {
         display: none;
       }
-
-  body.is-preload
+  //- 新增鎖右鍵、鎖拖拉圖片
+  body.is-preload(oncontextmenu="event.returnValue=false", onselectstart="event.returnValue=false", onSelectStart="window.event.returnValue=false", onDragStart="window.event.returnValue=false")
     style(type='text/css').
       body {
         user-select: none;
