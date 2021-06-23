@@ -30,7 +30,16 @@
 		img {
 			border-radius: _size(border-radius);
 			display: block;
+			pointer-events: none;
 		}
+
+		// @include breakpoint('<=small') {
+		// 	img {
+		// 		opacity: 0;
+		// 	}
+		// 	background-image: url('../../images/info.jpg');
+		// 	background-size: cover;
+		// }
 
 		&.left,
 		&.right {
