@@ -211,7 +211,8 @@ input[type="radio"] + label:before { border-radius: 100%; }
 
 @media screen and (max-width: 736px) { .image.main { margin: 2rem auto; } }
 
-@media screen and (max-width: 480px) { .image.main { margin: 1.5rem auto; width: 80%; } }
+@media screen and (max-width: 480px) { .image.main { margin: 1.5rem auto; width: 80%; background-image: url("../../images/info.jpg"); background-size: cover; height: 400px; background-position: center; }
+  .image.main img { display: none; } }
 
 /* List */
 ol { list-style: decimal; margin: 0 0 2rem 0; padding-left: 1.25em; }
