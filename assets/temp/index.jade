@@ -5,7 +5,7 @@ block meta
   - var description = '文瀚大學唸的是大傳（主修電子、公關）與戲劇（主修編劇、導演）。曾是兢兢業業小記者，也曾是爆肝攝影記者；曾演過舞台劇，也曾嘗試不是人幹的導演；曾是電台DJ主播，也曾玩配音、玩到全國第三；曾是全校主播大賽雙料冠軍，也曾獲選全國大專優秀青年；喜愛影像與聲音創作，攝影與廣播類，也都曾全國前三。'
   - var url = 'https://liwenhan213.idv.tw/'
   - var fbImg = 'https://liwenhan213.idv.tw/images/fb.jpg'
-  - var keywords = '配音員, 李文瀚, 聲創'
+  - var keywords = '配音員, 李文瀚, 聲創, 配音教學, 台灣配音維基'
   - var mainColor = '#333333'
 
 
@@ -70,7 +70,7 @@ html
         "name": "配音員李文瀚的聲創／教學世界",
         "url": "https://liwenhan213.idv.tw/",
         "description": "文瀚大學唸的是大傳（主修電子、公關）與戲劇（主修編劇、導演）。曾是兢兢業業小記者，也曾是爆肝攝影記者；曾演過舞台劇，也曾嘗試不是人幹的導演；曾是電台DJ主播，也曾玩配音、玩到全國第三；曾是全校主播大賽雙料冠軍，也曾獲選全國大專優秀青年；喜愛影像與聲音創作，攝影與廣播類，也都曾全國前三。",
-        "keywords": ["配音員","李文瀚","聲創"]
+        "keywords": ["配音員","李文瀚","聲創", "配音教學", "台灣配音維基"]
       }
 
     = "\n"
@@ -114,23 +114,30 @@ html
           .content
             .inner
               //- h1 {{ inner.h1.tw }}
-              h1 {{ $t("inner.h1") }}
-              p {{ $t("inner.p") }}
+              h1
+                span(data-nosnippet) {{ $t("inner.h1") }}
+              p
+                span(data-nosnippet) {{ $t("inner.p") }}
           nav
             //- ul
               li(v-for='nav in navs')
                 a(:href='nav.link') {{ nav.item }}
             ul
               li
-                a(:href="$t('navs.link1')") {{ $t("navs.item1") }}
+                a(:href="$t('navs.link1')")
+                  span(data-nosnippet) {{ $t("navs.item1") }}
               li
-                a(:href="$t('navs.link2')") {{ $t("navs.item2") }}
+                a(:href="$t('navs.link2')")
+                  span(data-nosnippet) {{ $t("navs.item2") }}
               li
-                a(:href="$t('navs.link3')") {{ $t("navs.item3") }}
+                a(:href="$t('navs.link3')")
+                  span(data-nosnippet) {{ $t("navs.item3") }}
               li
-                a(:href="$t('navs.link4')") {{ $t("navs.item4") }}
+                a(:href="$t('navs.link4')")
+                  span(data-nosnippet) {{ $t("navs.item4") }}
               li
-                a(:href="$t('navs.link5')") {{ $t("navs.item5") }}
+                a(:href="$t('navs.link5')")
+                  span(data-nosnippet) {{ $t("navs.item5") }}
               
         // Main
         #main          
