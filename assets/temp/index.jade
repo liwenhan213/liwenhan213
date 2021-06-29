@@ -144,8 +144,9 @@ html
 
           // 簡介
           article#about
-            h2.major {{ $t("navs.item1") }}
-            span.image.main
+            h2.major
+              span(data-nosnippet) {{ $t("navs.item1") }}
+            span(data-nosnippet).image.main
               img(src='images/info.jpg', alt='配音員李文瀚')
             p {{ $t("about.p1") }}
             p {{ $t("about.p2") }}
