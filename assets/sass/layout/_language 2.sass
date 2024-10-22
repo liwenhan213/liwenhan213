@@ -1,0 +1,25 @@
+.language
+  position: absolute
+  right: 10px
+  top: 10px
+  width: 100px
+  font-size: 16px
+  span
+    margin-left: 5px
+  a
+    display: inline-block
+    width: 100%
+    text-align: center
+    cursor: pointer
+    padding: 4px 0
+    &:hover
+      border-bottom: 0      
+  .change
+    position: relative
+    // display: none
+    &.active
+      display: none
+    a
+      transition: all .3s
+      &:hover
+        color: #0B9ED9

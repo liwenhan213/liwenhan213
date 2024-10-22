@@ -1,0 +1,449 @@
+//- meta 預設值
+block meta
+  - var siteName = '配音員李文瀚的聲創／教學世界'
+  - var pageTitle = '配音員李文瀚的聲創／教學世界'
+  - var description = '文瀚大學唸的是大傳（主修電子、公關）與戲劇（主修編劇、導演）。曾是兢兢業業小記者，也曾是爆肝攝影記者；曾演過舞台劇，也曾嘗試不是人幹的導演；曾是電台DJ主播，也曾玩配音、玩到全國第三；曾是全校主播大賽雙料冠軍，也曾獲選全國大專優秀青年；喜愛影像與聲音創作，攝影與廣播類，也都曾全國前三。'
+  - var url = 'https://liwenhan213.idv.tw/'
+  - var fbImg = 'https://liwenhan213.idv.tw/images/fb.jpg'
+  - var keywords = '配音員, 李文瀚, 聲創, 配音教學, 台灣配音維基'
+  - var mainColor = '#333333'
+
+
+doctype html
+//
+  Dimension by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+html
+  head
+    meta(charset="utf-8")
+    title=pageTitle
+    meta(name="description", content=description)
+    link(rel="canonical", href=url)
+    meta(http-equiv="X-UA-Compatible", content="ie=edge, chrome=1")
+    meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=1")
+    meta(name="MobileOptimized", content="320")
+    meta(name="HandheldFriendly", content="True")
+    meta(name="format-detection", content="telephone=no")
+
+    //- chrome網址列顏色
+    meta(name="theme-color", content=mainColor)
+
+    //- safari網址列顏色：default、black、black-translucent
+    meta(name="apple-mobile-web-app-status-bar-style", content="black")
+
+    //- windows 系統用
+    meta(name="application-name", content=siteName)
+    meta(name="msapplication-TileColor", content=mainColor)
+
+    //- fb
+    meta(property="og:url", content=url)
+    meta(property="og:type", content="website")
+    meta(property="og:site_name", content=siteName)
+    meta(property="og:title", content=pageTitle)
+    meta(property="og:description", content=description)
+    meta(property="og:image", content=fbImg)
+    meta(property="og:image:width", content="1200")
+    meta(property="og:image:height", content="630")
+    meta(property="og:image:alt", content=pageTitle)
+    meta(name="keywords", content=keywords)
+    link(href='https://liwenhan213.idv.tw/images/favicon.png', rel='apple-touch-icon', sizes='120x120')
+    link(href='https://liwenhan213.idv.tw/images/favicon.png', rel='apple-touch-icon', sizes='180x180')
+    link(href='https://liwenhan213.idv.tw/images/favicon.png', rel='apple-touch-icon', sizes='167x167')
+    link(href='https://liwenhan213.idv.tw/images/favicon.png', rel='apple-touch-icon', sizes='152x152')
+    link(type='image/x-icon', rel='shortcut icon', href='https://liwenhan213.idv.tw/images/favicon.ico')
+    link(rel='stylesheet', href='assets/css/main.css')
+    noscript
+      link(rel='stylesheet', href='assets/css/noscript.css')
+      
+    //- Google Search Gallery 結構化資料
+    script(type='application/ld+json').
+      {
+        "@context": "https://schema.org/",
+        "@type": "WebSite",
+        "publisher":{"@type":"Organization",
+        "name":"配音員李文瀚的聲創／教學世界",
+        "logo":{"@type":"ImageObject","url":"https://liwenhan213.idv.tw/images/favicon.png"}},
+        "datePublished":"2020-05-07T20:34:00+08:00",
+        "dateModified":"2020-05-07T20:34:00+08:00",
+        "thumbnailUrl":"https://liwenhan213.idv.tw/images/fb.jpg",
+        "name": "配音員李文瀚的聲創／教學世界",
+        "url": "https://liwenhan213.idv.tw/",
+        "description": "文瀚大學唸的是大傳（主修電子、公關）與戲劇（主修編劇、導演）。曾是兢兢業業小記者，也曾是爆肝攝影記者；曾演過舞台劇，也曾嘗試不是人幹的導演；曾是電台DJ主播，也曾玩配音、玩到全國第三；曾是全校主播大賽雙料冠軍，也曾獲選全國大專優秀青年；喜愛影像與聲音創作，攝影與廣播類，也都曾全國前三。",
+        "keywords": ["配音員","李文瀚","聲創", "配音教學", "台灣配音維基"]
+      }
+
+    = "\n"
+    //- 支援 html5
+    <!--[if lte IE 9]>
+      script(src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js")
+      <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <![endif]-->    
+    = "\n"    
+
+    style.
+      [v-cloak] {
+        display: none;
+      }
+  //- 新增鎖右鍵、鎖拖拉圖片
+  body.is-preload(oncontextmenu="event.returnValue=false", onselectstart="event.returnValue=false", onSelectStart="window.event.returnValue=false", onDragStart="window.event.returnValue=false")
+    style(type='text/css').
+      body {
+        user-select: none;
+        -moz-user-select : none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+      }
+    #app(v-cloak)
+      // Wrapper
+      #wrapper
+        
+        // 繁簡切換        
+        .language
+          a(href='#', @click.prevent="languageChange = !languageChange") {{ language }}
+            span.fas.fa-caret-down
+          .change(:class="{ 'active': languageChange == true}", @click.prevent="languageChange = !languageChange")
+            a(href='#', @click.prevent="changeTW") 繁體中文
+            a(href='#', @click.prevent="changeCN") 简体中文
+
+        // Header
+        header#header         
+
+          .logo
+            span.fas.fa-microphone.fa-3x
+          .content
+            .inner
+              //- h1 {{ inner.h1.tw }}
+              h1
+                span(data-nosnippet) {{ $t("inner.h1") }}
+              p
+                span(data-nosnippet) {{ $t("inner.p") }}
+          nav
+            //- ul
+              li(v-for='nav in navs')
+                a(:href='nav.link') {{ nav.item }}
+            ul
+              li
+                a(:href="$t('navs.link1')")
+                  span(data-nosnippet) {{ $t("navs.item1") }}
+              li
+                a(:href="$t('navs.link2')")
+                  span(data-nosnippet) {{ $t("navs.item2") }}
+              li
+                a(:href="$t('navs.link3')")
+                  span(data-nosnippet) {{ $t("navs.item3") }}
+              li
+                a(:href="$t('navs.link4')")
+                  span(data-nosnippet) {{ $t("navs.item4") }}
+              li
+                a(:href="$t('navs.link5')")
+                  span(data-nosnippet) {{ $t("navs.item5") }}
+              
+        // Main
+        #main          
+
+          // 簡介
+          article#about
+            h2.major
+              span(data-nosnippet) {{ $t("navs.item1") }}
+            span(data-nosnippet).image.main
+              img(src='images/info.jpg', alt='配音員李文瀚')
+            p {{ $t("about.p1") }}
+            p {{ $t("about.p2") }}
+              small.small {{ $t("about.small") }} &nbsp;&#8594;&nbsp;
+              a.vocustaiwan(href='https://vocustaiwan.fandom.com/zh-tw/wiki/%E6%9D%8E%E6%96%87%E7%80%9A', target="_blank") {{ $t("about.a") }}
+            blockquote.vocustaiwan {{ $t("about.blockquote") }}
+
+          // 資歷
+          article#resume
+            h2.major {{ $t("navs.item2") }}
+            //- 學業資歷
+            h3.major
+              span.fas.fa-bookmark
+              |  {{ $t("resume.resume1") }}
+            ul
+              li {{ $t("resume1.li1") }}
+              li {{ $t("resume1.li2") }}
+              li {{ $t("resume1.li3") }}
+              li {{ $t("resume1.li4") }}
+              li {{ $t("resume1.li5") }}
+            br
+            //- 得獎資歷
+            h3.major
+              span.fas.fa-trophy
+              |  {{ $t("resume.resume2") }}
+            ul
+              li {{ $t("resume2.li1") }}
+            h4 {{ $t("resume2list.list1") }}
+            ul
+              li {{ $t("resume2.li2") }}
+              li {{ $t("resume2.li3") }}
+              li {{ $t("resume2.li4") }}
+              li {{ $t("resume2.li5") }}
+              li {{ $t("resume2.li6") }}
+              li {{ $t("resume2.li7") }}
+              li {{ $t("resume2.li8") }}
+              li {{ $t("resume2.li9") }}
+            h4 {{ $t("resume2list.list2") }}
+            ul
+              li {{ $t("resume2.li10") }}
+              li {{ $t("resume2.li11") }}
+              li {{ $t("resume2.li12") }}
+              li {{ $t("resume2.li13") }}
+              li {{ $t("resume2.li14") }}
+              li {{ $t("resume2.li15") }}
+              li {{ $t("resume2.li16") }}
+            h4 {{ $t("resume2list.list3") }}
+            ul
+              li {{ $t("resume2.li17") }}
+            br
+            //- 主持資歷
+            h3.major
+              span.fas.fa-microphone
+              |  {{ $t("resume.resume3") }}
+            ul
+              li {{ $t("resume3.li1") }}
+              li {{ $t("resume3.li2") }}
+              li {{ $t("resume3.li3") }}
+              li {{ $t("resume3.li4") }}
+              li {{ $t("resume3.li5") }}
+              li {{ $t("resume3.li6") }}
+            br
+            //- 演出資歷
+            h3.major
+              span.fas.fa-bullhorn
+              |  {{ $t("resume.resume4") }}
+            ul
+              li {{ $t("resume4.li1") }}
+              li {{ $t("resume4.li2") }}
+            br
+            //- 教學資歷
+            h3.major
+              span.fas.fa-book
+              |  {{ $t("resume.resume5") }}
+            ul
+              li {{ $t("resume5.li1") }}
+              li {{ $t("resume5.li2") }}
+              li {{ $t("resume5.li3") }}
+              li {{ $t("resume5.li4") }}
+              li {{ $t("resume5.li5") }}
+              li {{ $t("resume5.li6") }}
+              li {{ $t("resume5.li7") }}
+              li {{ $t("resume5.li8") }}
+              li {{ $t("resume5.li9") }}
+              li {{ $t("resume5.li10") }}
+              li {{ $t("resume5.li11") }}
+              //- 演講／受訪資歷
+            h3.major
+              span.fas.fa-microphone
+              |  {{ $t("resume.resume6") }}
+            ul
+              li {{ $t("resume6.li1") }}
+              li {{ $t("resume6.li2") }}
+              li {{ $t("resume6.li3") }}
+              li {{ $t("resume6.li4") }}
+              li {{ $t("resume6.li5") }}
+              li {{ $t("resume6.li6") }}
+            //- 配音資歷
+            h3.major
+              span.fas.fa-microphone
+              |  {{ $t("resume.resume7") }}
+            ul
+              li {{ $t("resume7.li1") }}
+                br
+                small.small {{ $t("about.small") }} &nbsp;&#8594;&nbsp;
+                a.vocustaiwan(href='https://vocustaiwan.fandom.com/zh-tw/wiki/%E6%9D%8E%E6%96%87%E7%80%9A', target="_blank") {{ $t("about.a") }}
+              
+        
+
+          // 作品
+          article#work
+            h2.major {{ $t("navs.item3") }}
+            //- 商業廣告類
+            h3.major
+              span.fas.fa-microphone-alt
+              |  {{ $t("work.group1") }}
+            //- 活力促銷類  
+            .audios
+              h4 {{ $t("work1list.work1") }}              
+              figure
+                audio(controls, :src="$t('work1.audio1')", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work1.title1") }}
+                  .download
+                    a(:href="$t('work1.audio1')", target="_blank", download) DOWNLOAD
+              figure
+                audio(controls, :src="$t('work1.audio2')", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work1.title2") }}
+                  .download
+                    a(:href="$t('work1.audio2')", target="_blank", download) DOWNLOAD
+              figure
+                audio(controls, :src="$t('work1.audio3')", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work1.title3") }}
+                  .download
+                    a(:href="$t('work1.audio3')", target="_blank", download) DOWNLOAD
+              figure
+                audio(controls, :src="$t('work1.audio4')", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work1.title4") }}
+                  .download
+                    a(:href="$t('work1.audio4')", target="_blank", download) DOWNLOAD
+            //- 沈穩質感類  
+            .audios
+              h4 {{ $t("work1list.work2") }}
+              figure
+                audio(controls, :src="$t('work2.audio1')", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work2.title1") }}
+                  .download
+                    a(:href="$t('work2.audio1')", target="_blank", download) DOWNLOAD
+              figure
+                audio(controls, :src="$t('work2.audio2')", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work2.title2") }}
+                  .download
+                    a(:href="$t('work2.audio2')", target="_blank", download) DOWNLOAD
+              figure
+                audio(controls, :src="$t('work2.audio3')", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work2.title3") }}
+                  .download
+                    a(:href="$t('work2.audio3')", target="_blank", download) DOWNLOAD
+              figure
+                audio(controls, :src="$t('work2.audio4')", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work2.title4") }}
+                  .download
+                    a(:href="$t('work2.audio4')", target="_blank", download) DOWNLOAD
+              figure
+                audio(controls, :src="$t('work2.audio5')", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work2.title5") }}
+                  .download
+                    a(:href="$t('work2.audio5')", target="_blank", download) DOWNLOAD
+            //- 知性旁白類
+            .audios
+              h4 {{ $t("work1list.work3") }}
+              figure
+                audio(controls, :src="$t('work3.audio1')", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work3.title1") }}
+                  .download
+                    a(:href="$t('work3.audio1')", target="_blank", download) DOWNLOAD
+              figure
+                audio(controls, :src="$t('work3.audio2')", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work3.title2") }}
+                  .download
+                    a(:href="$t('work3.audio2')", target="_blank", download) DOWNLOAD
+              figure
+                audio(controls, :src="$t('work3.audio3')", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work3.title3") }}
+                  .download
+                    a(:href="$t('work3.audio3')", target="_blank", download) DOWNLOAD
+            //- 專業肯定類
+            .audios
+              h4 {{ $t("work1list.work4") }}
+              figure
+                audio(controls, :src="$t('work4.audio1')", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work4.title1") }}
+                  .download
+                    a(:href="$t('work4.audio1')", target="_blank", download) DOWNLOAD
+              figure
+                audio(controls, :src="$t('work4.audio2')", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work4.title2") }}
+                  .download
+                    a(:href="$t('work4.audio2')", target="_blank", download) DOWNLOAD
+            //- 角色扮演類
+            .audios
+              h4 {{ $t("work1list.work5") }}
+              figure
+                audio(controls, :src="$t('work5.audio1')", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work5.title1") }}
+                  .download
+                    a(:href="$t('work5.audio1')", target="_blank", download) DOWNLOAD
+              figure
+                audio(controls, :src="$t('work5.audio2')", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work5.title2") }}
+                  .download
+                    a(:href="$t('work5.audio2')", target="_blank", download) DOWNLOAD
+              figure
+                audio(controls, :src="$t('work5.audio3')", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("work5.title3") }}
+                  .download
+                    a(:href="$t('work5.audio3')", target="_blank", download) DOWNLOAD
+            //- 工商簡介類
+            h3.major
+              span.fas.fa-microphone-alt
+              |  {{ $t("work.group2") }}
+            .audios
+              figure
+                audio(controls, :src="$t('group2.audio1')", controlsList="nodownload")
+                .txt
+                  figcaption {{ $t("group2.title1") }}
+                  .download
+                    a(:href="$t('group2.audio1')", target="_blank", download) DOWNLOAD         
+            
+          
+          // 聯絡
+          article#contact
+            h2.major {{ $t("navs.item5") }}
+            p {{ $t("contact.p") }}         
+            ul
+              li {{ $t("contact.line") }}  
+              li {{ $t("contact.wechat") }}  
+              li {{ $t("contact.phone") }}  
+                a(href='tel:+886-922-145-947') {{ $t("contact.tel") }}
+              li E-mail：
+                a(href='mailto:liwenhan.213＠gmail.com') {{ $t("contact.mail") }}
+
+          
+          // 留言
+          article#message
+            h2.major {{ $t("navs.item4") }}
+            form
+              .fields
+                .field.half
+                  label(for='name') {{ $t("message.name") }} 
+                  input#name(type='text', v-model="form_name.value", :placeholder="$t('message.nameplaceholder')")
+                .field.half
+                  label(for='tel') {{ $t("message.tel") }} 
+                  input#name(type='text', v-model="form_tel.value", :placeholder="$t('message.telplaceholder')")
+                .field.half
+                  label(for='email') {{ $t("message.email") }} 
+                  input#email(type='text', v-model="form_email.value", :placeholder="$t('message.emailplaceholder')")
+                .field
+                  label(for='message') {{ $t("message.message") }} 
+                  textarea#message(type='text', v-model="form_message.value", rows='4')
+              ul.actions
+                li
+                  a.button.primary(href="#", @click.prevent="submitForm") 送出
+
+
+        // Footer
+        footer#footer
+          p.copyright
+            | Design 
+            a(href='https://html5up.net', target="_blank") HTML5 UP
+            | 　|　 {{ $t("inner.copyright") }}
+
+
+      // BG
+      #bg
+    // Scripts
+    script(src='//cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js')
+    script(src="//cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.js")
+    script(src='assets/js/jquery.min.js')
+    script(src='assets/js/browser.min.js')
+    script(src='assets/js/breakpoints.min.js')
+    script(src='assets/js/util.js')
+    script(src=`assets/js/custom.js?v=${new Date().getTime()}`)
+    script(src=`assets/js/main.js?v=${new Date().getTime()}`)
