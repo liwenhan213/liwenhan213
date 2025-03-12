@@ -59,18 +59,30 @@ html
     //- Google Search Gallery 結構化資料
     script(type='application/ld+json').
       {
-        "@context": "https://schema.org/",
-        "@type": "WebSite",
-        "publisher":{"@type":"Organization",
-        "name":"配音員李文瀚的聲創／教學世界",
-        "logo":{"@type":"ImageObject","url":"https://liwenhan213.idv.tw/images/favicon.png"}},
-        "datePublished":"2020-05-07T20:34:00+08:00",
-        "dateModified":"2020-05-07T20:34:00+08:00",
-        "thumbnailUrl":"https://liwenhan213.idv.tw/images/fb.jpg",
-        "name": "配音員李文瀚的聲創／教學世界",
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "李文瀚",
+        "alternateName": "配音員李文瀚",
         "url": "https://liwenhan213.idv.tw/",
-        "description": "文瀚大學唸的是大傳（主修電子、公關）與戲劇（主修編劇、導演）。曾是兢兢業業小記者，也曾是爆肝攝影記者；曾演過舞台劇，也曾嘗試不是人幹的導演；曾是電台DJ主播，也曾玩配音、玩到全國第三；曾是全校主播大賽雙料冠軍，也曾獲選全國大專優秀青年；喜愛影像與聲音創作，攝影與廣播類，也都曾全國前三。",
-        "keywords": ["配音員","李文瀚","聲創", "配音教學", "台灣配音維基"]
+        "image": "https://liwenhan213.idv.tw/images/fb.jpg",
+        "description": "台灣專業配音員，專長於廣告、動畫、旁白及有聲書。提供專業配音服務與教學。",
+        "jobTitle": "配音員、聲音創作者",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "自由接案"
+        },
+        "knowsAbout": [
+          "配音",
+          "廣告旁白",
+          "有聲書錄製",
+          "影視配音",
+          "配音教學"
+        ],
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://liwenhan213.idv.tw/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
       }
 
     = "\n"
